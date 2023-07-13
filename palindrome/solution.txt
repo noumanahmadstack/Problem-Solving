@@ -1,0 +1,13 @@
+function isPalindrome(string) {
+  for (let i = 0; i <= (string.length) / 2; i++) {
+    if (string[i] !== string[string.length - (i + 1)]) {
+      return false; // Exit the loop and return false if a mismatch is found
+    }
+  }
+  return true; // Return true if no mismatches are found
+}
+
+// Example usage
+let inputString = 'abccba';
+let result = isPalindrome(inputString);
+console.log(result);
