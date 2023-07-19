@@ -1,0 +1,26 @@
+// function for find two integers whose sum is greatest in array.
+function findGreatestSumPair(arr) {
+  if (arr.length < 2) {
+    throw new Error('The array should contain at least two integers.');
+  }
+
+  let firstMax = arr[0];
+  let secondMax = arr[1];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      const sum = arr[i] + arr[j];
+      if (sum > firstMax + secondMax) {
+        firstMax = arr[i];
+        secondMax = arr[j];
+      }
+    }
+  }
+
+  return [firstMax, secondMax];
+}
+
+// Example usage
+let arr = [51, 8, 2, 10, 3];
+let [firstNum, secondNum] = findGreatestSumPair(arr);
+console.log(firstNum,secondNum);
